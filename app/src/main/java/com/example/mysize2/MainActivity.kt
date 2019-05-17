@@ -1,5 +1,6 @@
 package com.example.mysize2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -27,6 +28,12 @@ class MainActivity : AppCompatActivity() {
         inseam.setText(editInseam)
 
         save.setOnClickListener { onSaveTapped() }
+
+//        heightの画面に移動
+        heightButton.setOnClickListener {
+            val intent = Intent(this,HeightActivity::class.java)
+            startActivity(intent)
+        }
     }
     private fun onSaveTapped() {
         val pref = PreferenceManager.getDefaultSharedPreferences(this)
