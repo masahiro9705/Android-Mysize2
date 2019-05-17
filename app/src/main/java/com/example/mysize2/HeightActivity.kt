@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.View
 import android.widget.AdapterView
+import android.widget.RadioButton
 import android.widget.SeekBar
 import android.widget.Spinner
 import androidx.core.content.edit
@@ -72,6 +73,12 @@ class HeightActivity : AppCompatActivity() {
 //                }
 //            }
 //        )
+
+//        ラジオボタン
+        radioGroup.setOnCheckedChangeListener{
+           group, checkedId ->
+                    height.text = findViewById<RadioButton>(checkedId).text
+        }
 
     }
 
